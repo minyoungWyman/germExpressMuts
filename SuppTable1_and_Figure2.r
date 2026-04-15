@@ -62,7 +62,7 @@ rca_corr <- rca %>%
                b["scale(phasedFrac)"]           * sc_phasedFrac +
                b["sexmother:scale(phasedFrac)"] * sex_mother * sc_phasedFrac,
     muts_corrected = muts * exp(-nuisance)
-  ) %>%
+  )
 
 ## ----------------------------------------------------------
 ## 2. Individual gene-level corrected rates
@@ -168,9 +168,16 @@ p <- ggplot() +
   ) 
  
 ## ----------------------------------------------------------
-ggsave("Figure1.pdf",
+ggsave("Figure2.pdf",
        plot   = p,        
        width  = 7,
        height = 7,
        dpi    = 300,
        bg     = "white")
+
+ggsave("Figure2_adjusted.png",
+       plot=p,
+       width=8,
+       height=8,
+       dpi=300,
+       bg="white")

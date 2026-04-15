@@ -8,7 +8,9 @@ df_long <- read.delim("tasym_tests.txt", h = TRUE) %>%
     Sex = factor(Sex, levels = c("log_male", "log_fem"))
   )
 
-pdf("Figure4.pdf", h = 8, w = 8)
+## pdf("Figure4.pdf", h = 8, w = 8)
+png("Figure4_dots.png", h = 8, w = 8, units="in", res=300)
+
 ggplot(df_long, aes(x = NTS, y = log_value, color = Sex)) +
   geom_hline(yintercept = 0, linetype = "solid",
              color = "grey70", linewidth = 0.3) +
