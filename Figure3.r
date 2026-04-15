@@ -25,7 +25,8 @@ df$mat_quant <- factor(df$mat_quant, levels = matQuant$mat_quant)
 midpoint <- mean(range(df$ratio))
 df$text_color <- ifelse(df$ratio > midpoint, "white", "#08306B")
 
-png("Figure3_heatmap.png", width = 8, height = 8, units = "in", res = 300)
+## png("Figure3_heatmap.png", width = 8, height = 8, units = "in", res = 300)
+pdf("Figure3.pdf", width = 8, height = 8)
 
 ggplot(df, aes(mat_quant, pat_quant, fill = ratio)) +
   geom_tile(color = NA) +
